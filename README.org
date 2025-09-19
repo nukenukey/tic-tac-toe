@@ -1,5 +1,5 @@
 * tic tac toe
 
-        tic tac toe in the browser made in nextjs and typescript
+        this is a tic tac toe project written in nextjs and typescript
 
-        entirely ripped from [[https://www.youtube.com/watch?v=7iw8j20h4pc][Build TicTacToe with React, TypeScript & NextJS (React hooks)]] by [[https://www.youtube.com/@TomDoesTech][TomDoesTech]]
+        almost entirelly ripped from [[https://www.youtube.com/watch?v=7iw8j20h4pc][Build TicTacToe with React, TypeScript & NextJS (React hooks)]] by [[https://www.youtube.com/@TomDoesTech][TomDoesTech]]
