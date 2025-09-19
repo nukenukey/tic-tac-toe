@@ -1,5 +1,8 @@
 import Image from "next/image";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3eac797 (cleaning up my mess :< (again) (again))
 import Board from "../../containers/Board";
 
 export default function Home() {
@@ -10,6 +13,7 @@ export default function Home() {
             </main>
             </div>
     );
+<<<<<<< HEAD
 =======
 
 export default function Home() {
@@ -113,4 +117,6 @@ export default function Home() {
     </div>
   );
 >>>>>>> 8cd79cb (Initial commit from Create Next App)
+=======
+>>>>>>> 3eac797 (cleaning up my mess :< (again) (again))
 }
