@@ -3,3 +3,19 @@
         this is a tic tac toe project written in nextjs and typescript
 
         almost entirelly ripped from [[https://www.youtube.com/watch?v=7iw8j20h4pc][Build TicTacToe with React, TypeScript & NextJS (React hooks)]] by [[https://www.youtube.com/@TomDoesTech][TomDoesTech]]
+
+** installation
+
+        1) installing npm
+
+           - you must install npm to build and run this project
+
+             - the command is usually `sudo apt install npm', `sudo dnf install npm' or `sudo pacman -S npm'
+
+               - if your package manager is different to this, you know how to install stuff
+
+               - if you're on windows, you're on your own :/
+
+** running / testing
+
+        1) cd into the base of the git directory and run `npm dev run'
