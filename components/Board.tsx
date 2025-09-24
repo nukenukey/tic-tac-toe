@@ -4,17 +4,7 @@ import { useState, useEffect } from "react";
 import Square from "./Square";
 type Player = "X" | "O" | "neither of you" | null;
 
-let selected: string = "human v human";
-
-export function getSelected(): string {
-    return selected;
-}
-
-export function setSelected(select: string): void {
-    selected = select;
-}
-
-function Board() {
+function Board({ selected }: { selected: string }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [currentPlayer, setCurrentPlayer] = useState<'X' | 'O'>('X');
     const [winner, setWinner] = useState<Player>(null);
