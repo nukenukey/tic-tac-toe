@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import Square from "../components/Square";
+import Square from "./Square";
 type Player = "X" | "O" | "neither of you" | null;
 
 let selected: string = "human v human";
