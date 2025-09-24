@@ -1,8 +1,7 @@
 'use client';
 import { useState } from "react";
-import { getSelected, setSelected } from "./Board";
 
-function Menu() {
+function Menu({ selected, setSelected }: { selected: string, setSelected: (val: string | ((prevVal: string) => string)) => void }) {
     const [isOpen, setIsOpen] = useState(false);
     const options = ["human v human", "human v computer"];
 
@@ -12,7 +11,7 @@ function Menu() {
     }
 
     function getClass(val: string): string {
-        if (val === getSelected()) {
+        if (val === selected) {
             return "selected";
         }
         return "not";
@@ -24,7 +23,7 @@ function Menu() {
 
     return (
         <div>
-            <button onClick={() => { dropDownToggle() }}>{getSelected()}</button>
+            <button onClick={() => { dropDownToggle() }}>{selected}</button>
             {isOpen && (
                 <div>
                     {options.map((val: string, ind: number) => {
