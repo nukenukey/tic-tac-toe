@@ -1,5 +1,5 @@
-import Board from "../../containers/Board";
-import Menu from "../../containers/Menu"
+import Board from "../../components/Board";
+import Menu from "../../components/Menu"
 
 export default function Home() {
     return (
