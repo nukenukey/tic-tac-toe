@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Square from "./Square";
 type Player = "X" | "O" | "neither of you" | null;
+export type { Player };
 
 function Board({ selected }: { selected: string }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
