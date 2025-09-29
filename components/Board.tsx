@@ -23,7 +23,7 @@ function Board({ selected }: { selected: string }) {
             return val;
         });
         setSquares(newData);
-        if (selected === "human v computer") {
+        if (selected === "human v computer" && (currentPlayer === 'X')) {
             if (calculateWinner(newData) !== null)
                 return;
             let temp = false;
