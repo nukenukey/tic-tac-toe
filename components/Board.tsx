@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Square from "./Square";
-type Player = "X" | "O" | "neither of you" | null;
-export type { Player };
+export type Player = "X" | "O" | "neither of you" | null;
 
 function Board({ selected }: { selected: string }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
@@ -37,7 +36,8 @@ function Board({ selected }: { selected: string }) {
             });
             setSquares(data);
             setCurrentPlayer("X");
-        } else {
+        }
+        else {
             setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
         }
     }
