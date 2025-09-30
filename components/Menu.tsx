@@ -28,13 +28,16 @@ function Menu({ selected, setSelected }: { selected: string, setSelected: (val: 
             {isOpen && (
                 <div>
                     {buttons.map((val: string, ind: number) => {
-                        return (<button
-                            className={getClass(val)}
-                            onClick={() => { select(val) }}
-                            key={ind}
-                        >
-                            {val}
-                        </button>
+                        return (<div
+                            key={ind}><button
+                                onClick={() => { select(val) }}
+                                className={getClass(val)}
+                                key={ind}
+                            >
+                                {val}
+                            </button>
+                            <br />
+                        </div>
                         );
                     })}
                 </div>
