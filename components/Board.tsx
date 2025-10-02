@@ -40,7 +40,7 @@ function Board({ selected }: { selected: string }) {
         } else if (selected === "human v computer: last available spot") {
             if (calculateWinner(newData) !== null)
                 return;
-            const ind = choose_last_available_spot(squares);
+            const ind = choose_last_available_spot(newData);
             const data = newData.map((val, i) => {
                 if (ind === i)
                     return 'O';
