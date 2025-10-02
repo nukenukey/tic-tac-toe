@@ -38,6 +38,8 @@ function Board({ selected }: { selected: string }) {
             setSquares(data);
             setCurrentPlayer("X");
         } else if (selected === "human v computer: last available spot") {
+            if (calculateWinner(newData) !== null)
+                return;
             const ind = choose_last_available_spot(squares);
             const data = newData.map((val, i) => {
                 if (ind === i)
