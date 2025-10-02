@@ -1,10 +1,10 @@
 'use client';
 import { useState } from "react";
-type options = "human v human" | "human v computer";
+type options = "human v human" | "human v computer" | "human v computer: last available spot";
 
 function Menu({ selected, setSelected }: { selected: string, setSelected: (val: string | ((prevVal: string) => string)) => void }) {
     const [isOpen, setIsOpen] = useState(false);
-    const buttons: options[] = ["human v human", "human v computer"];
+    const buttons: options[] = ["human v human", "human v computer", "human v computer: last available spot"];
 
     function select(str: string): void {
         setSelected(str);
@@ -28,13 +28,16 @@ function Menu({ selected, setSelected }: { selected: string, setSelected: (val: 
             {isOpen && (
                 <div>
                     {buttons.map((val: string, ind: number) => {
-                        return (<button
-                            className={getClass(val)}
-                            onClick={() => { select(val) }}
-                            key={ind}
-                        >
-                            {val}
-                        </button>
+                        return (<div
+                            key={ind}><button
+                                onClick={() => { select(val) }}
+                                className={getClass(val)}
+                                key={ind}
+                            >
+                                {val}
+                            </button>
+                            <br />
+                        </div>
                         );
                     })}
                 </div>

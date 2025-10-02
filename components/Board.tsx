@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Square from "./Square";
-type Player = "X" | "O" | "neither of you" | null;
+import choose_last_available_spot from "./lastAvailable";
+export type Player = "X" | "O" | "neither of you" | null;
 
 function Board({ selected }: { selected: string }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
@@ -36,6 +37,18 @@ function Board({ selected }: { selected: string }) {
             });
             setSquares(data);
             setCurrentPlayer("X");
+        } else if (selected === "human v computer: last available spot") {
+            if (calculateWinner(newData) !== null)
+                return;
+            const ind = choose_last_available_spot(newData);
+            const data = newData.map((val, i) => {
+                if (ind === i)
+                    return 'O';
+                else
+                    return val;
+            });
+            setSquares(data);
+            setCurrentPlayer('X');
         } else {
             setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
         }

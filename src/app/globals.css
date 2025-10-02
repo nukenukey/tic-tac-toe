@@ -36,18 +36,10 @@ p {
 
 .selected {
     background-color: white;
-    width: 50px;
-    height: 25px;
-    font-size: 8px;
     color: black;
-    border: solid 1px black;
 }
 
 .not {
-    /* background-color: gray; */
-    width: 50px;
-    height: 25px;
-    font-size: 8px;
+    background-color: lightgray;
     color: black;
-    border: solid 1px black;
 }
