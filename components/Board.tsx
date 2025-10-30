@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Square from "./Square";
 import choose_last_available_spot from "./lastAvailable";
+import get from './test';
 export type Player = "X" | "O" | "neither of you" | null;
 
 function Board({ selected }: { selected: string }) {
@@ -11,6 +12,7 @@ function Board({ selected }: { selected: string }) {
     const [winner, setWinner] = useState<Player>(null);
 
     function reset() {
+        get(squares, currentPlayer);
         setSquares(Array(9).fill(null));
         setWinner(null);
         setCurrentPlayer('X');
