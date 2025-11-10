@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import Square from "./Square";
 import choose_last_available_spot from "./lastAvailable";
+import send from './Request';
 export type Player = "X" | "O" | "neither of you" | null;
 
 function Board({ selected }: { selected: string }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
-    const [currentPlayer, setCurrentPlayer] = useState<'X' | 'O'>('X');
+    const [currentPlayer, setCurrentPlayer] = useState<Player>('X');
     const [winner, setWinner] = useState<Player>(null);
 
     function reset() {
@@ -27,13 +28,13 @@ function Board({ selected }: { selected: string }) {
         if (selected === "human v computer" && (currentPlayer === 'X')) {
             if (calculateWinner(newData) !== null)
                 return;
-            let temp = false;
-            const data = newData.map((val) => {
-                if (!temp && val === null) {
-                    temp = true;
-                    return "O";
-                }
-                return val;
+            const resp: number = send(newData);
+            console.log("resp: " + resp);
+            const data = newData.map((val, i) => {
+                if (i === resp)
+                    return 'O';
+                else
+                    return val;
             });
             setSquares(data);
             setCurrentPlayer("X");

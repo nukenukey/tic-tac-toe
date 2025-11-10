@@ -1,4 +1,4 @@
-type Player = "X" | "O" | "neither of you" | null;
+import { Player } from './Board';
 
 function Square({
     value,
